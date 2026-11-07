@@ -12,7 +12,7 @@ export default function About() {
         </Reveal>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-2">
-          <Reveal>
+          <Reveal className="min-w-0">
             <div className="space-y-5 text-muted leading-relaxed">
               {about.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
@@ -20,16 +20,16 @@ export default function About() {
             </div>
           </Reveal>
 
-          <Reveal delay={150}>
+          <Reveal delay={150} className="min-w-0">
             {/* Code-style card, like the reference site */}
-            <div className="overflow-hidden rounded-xl border border-border bg-card">
+            <div className="w-full min-w-0 overflow-hidden rounded-xl border border-border bg-card">
               <div className="flex items-center gap-2 border-b border-border px-4 py-3">
                 <span className="h-3 w-3 rounded-full bg-red-500/80" />
                 <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
                 <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
                 <span className="ml-2 font-mono text-xs text-dim">identity.ts</span>
               </div>
-              <pre className="overflow-x-auto bg-surface p-5 font-mono text-sm leading-relaxed text-muted">
+              <pre className="max-w-full overflow-x-auto bg-surface p-4 font-mono text-xs leading-relaxed text-muted sm:p-5 sm:text-sm">
                 {about.identityCode.split("\n").map((line, i) => (
                   <div key={i}>
                     <span className="select-none text-dim/60">{String(i + 1).padStart(2, " ")}</span>{" "}

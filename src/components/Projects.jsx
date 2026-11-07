@@ -14,12 +14,14 @@ export default function Projects() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, i) => (
-            <Reveal key={project.title} delay={i * 100}>
-              <article className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 transition-colors hover:border-amber-500/50">
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-xl font-semibold text-fg">{project.title}</h3>
+            <Reveal key={project.title} delay={i * 100} className="h-full min-w-0">
+              <article className="group flex h-full min-w-0 flex-col rounded-2xl border border-border bg-card p-5 transition-colors hover:border-amber-500/50 sm:p-6">
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <h3 className="min-w-0 break-words text-lg font-semibold text-fg sm:text-xl">
+                    {project.title}
+                  </h3>
                   {project.featured && (
                     <span className="shrink-0 rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-0.5 text-xs font-medium text-amber-600 light:text-amber-700">
                       Featured
@@ -27,17 +29,17 @@ export default function Projects() {
                   )}
                 </div>
 
-                <p className="mt-3 text-sm text-muted leading-relaxed">{project.description}</p>
+                <p className="mt-3 break-words text-sm text-muted leading-relaxed">{project.description}</p>
 
                 {project.problem && (
                   <div className="mt-4 space-y-3 text-sm">
                     <div>
                       <p className="font-mono text-xs text-amber-500 light:text-amber-700">Problem</p>
-                      <p className="mt-1 text-muted">{project.problem}</p>
+                      <p className="mt-1 break-words text-muted">{project.problem}</p>
                     </div>
                     <div>
                       <p className="font-mono text-xs text-emerald-500">Solution</p>
-                      <p className="mt-1 text-muted">{project.solution}</p>
+                      <p className="mt-1 break-words text-muted">{project.solution}</p>
                     </div>
                   </div>
                 )}
